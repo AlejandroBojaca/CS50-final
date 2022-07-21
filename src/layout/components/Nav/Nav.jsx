@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 const Navigation = styled.div`
@@ -10,7 +11,7 @@ const Navigation = styled.div`
 const Nav = () => {
     return (
         <Navigation style={{width:"100%"}}>
-            <h1>Progresive Pomodoro</h1>
+            <h1 style={{color:'white'}}>Progresive Pomodoro</h1>
         </Navigation>
     )
 }
