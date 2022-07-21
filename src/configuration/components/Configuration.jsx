@@ -1,13 +1,14 @@
-import React from 'react'
-import {Dialog, Input, DialogContentText, DialogTitle, Slider, Checkbox} from  '@mui/material'
+import React, {useContext} from 'react'
+import {Dialog, DialogTitle} from  '@mui/material'
 import ConfigurationSimple from './ConfigurationSimple'
 import ConfigurationProgressive from './ConfigurationProgressive'
-import styled from 'styled-components'
+import {TypeContext} from '../../contexts/type.context'
 
 const Configuration = ({type}) =>{
-    console.log(type)
+    const {open, setOpen} = useContext(TypeContext);
+
     return(
-        <Dialog open maxWidth='lg' fullWidth onClose={()=> console.log('Closing')}>
+        <Dialog open={open} maxWidth='lg' fullWidth onClose={()=>setOpen(false)}>
             <DialogTitle>{"Configuration "}{type}</DialogTitle>
             {type === 'Progressive' ? <ConfigurationProgressive/> : <ConfigurationSimple/>}
         </Dialog>

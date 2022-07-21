@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import BigButton from './utils/BigButton'
 import styled from 'styled-components'
 import Configuration from '../../../configuration/components/Configuration'
+import {TypeContext} from '../../../contexts/type.context';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -11,13 +12,15 @@ const StyledContainer = styled.div`
 `
 
 const MainPage = () =>{
+    const {type} = useContext(TypeContext)
 
     return (
-        <StyledContainer maxWidth="fixed" disableGutters>
-          <BigButton color="success">Progresive</BigButton>
-          <BigButton>Classic</BigButton>
-          <Configuration type={'Progressive'}/>
-        </StyledContainer> 
+        
+          <StyledContainer maxWidth="fixed" disableGutters>
+            <BigButton color="success" child={'Progressive'} type={'Progressive'}/>
+            <BigButton child={'Classic'} type={'Classic'}/>
+            <Configuration type={type}/>
+          </StyledContainer> 
     )
 }
 

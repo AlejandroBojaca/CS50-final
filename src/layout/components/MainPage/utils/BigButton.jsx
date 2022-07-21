@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Button} from '@mui/material'
 import styled from 'styled-components'
+import {TypeContext} from '../../../../contexts/type.context';
 
 import "./button-styles.css"
 
@@ -11,9 +12,22 @@ const StyledButton = styled(Button)`
   border-radius:0;
 `
 
-const BigButton = ({color}) =>{
+const BigButton = ({color, child, type}) =>{
+    const {setType, setOpen} = useContext(TypeContext);
+
+    const handleClick = () => {
+      setType(type);
+      setOpen(true);
+    }
     return (
-        <StyledButton color={color} variant="contained" className="no-border-radius-radius" style={{borderRadius:0}}/>
+        <StyledButton 
+          color={color} 
+          variant="contained" 
+          className="no-border-radius-radius" 
+          style={{borderRadius:0}}
+          onClick={handleClick}>
+          {child}
+        </StyledButton>
     )
 }
 
