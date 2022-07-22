@@ -10,7 +10,10 @@ const Configuration = ({type}) =>{
     return(
         <Dialog open={open} maxWidth='lg' fullWidth onClose={()=>setOpen(false)}>
             <DialogTitle>{"Configuration "}{type}</DialogTitle>
-            {type === 'Progressive' ? <ConfigurationProgressive/> : <ConfigurationSimple/>}
+            {type === 'Progressive' ? 
+                <ConfigurationProgressive/> : 
+                <ConfigurationSimple/>
+            }
         </Dialog>
     )
 }

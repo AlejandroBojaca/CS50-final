@@ -1,9 +1,11 @@
 import React from 'react'
-import {Dialog, Input, DialogContentText, DialogTitle, Slider, Checkbox} from  '@mui/material'
+import {DialogContentText, Button} from  '@mui/material'
+import Input from './utils/Input'
 import styled from 'styled-components'
+import Checkbox from './utils/CheckBox'
 
 export const StyledContainer = styled.div`
-    padding: 2rem;
+    padding: 2rem 3rem 3rem 3rem;
 `
 
 export const SmallContainer = styled.div`
@@ -11,23 +13,25 @@ export const SmallContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-bottom:1rem;
+    min-height: 5rem;
 `
 
 const ConfigurationSimple = () => {
     return (
         <StyledContainer>
             <SmallContainer>
-                <DialogContentText>{"Pomodoro Time per session (Minutes)"}</DialogContentText>
-                <Input/>
+                <DialogContentText>{"Working Time"}</DialogContentText>
+                <Input inputField={'time-per-session'}/>
             </SmallContainer>
             <SmallContainer>
-                <DialogContentText>{"Rest time (Minutes)"}</DialogContentText>
-                <Input/>
+                <DialogContentText>{"Rest Time"}</DialogContentText>
+                <Input inputField={'rest-time'}/>
             </SmallContainer>
             <SmallContainer>
                 <DialogContentText>{"Auto Start"}</DialogContentText>
                 <Checkbox/>
             </SmallContainer>
+            <Button variant="outlined">Submit</Button>
         </StyledContainer>
     )
 }
