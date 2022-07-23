@@ -8,7 +8,6 @@ const MyCheckBox = () =>{
     const handleCheck = (e) => {
         setChecked(!checked);
     }
-    console.log(checked)
     return (
         <Checkbox
             checked={checked}

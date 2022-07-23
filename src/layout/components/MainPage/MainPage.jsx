@@ -2,8 +2,9 @@ import React, {useContext} from 'react';
 import BigButton from './utils/BigButton'
 import styled from 'styled-components'
 import Configuration from '../../../configuration/components/Configuration'
-import Counter from './counter';
+import Counter from '../Counter/Counter';
 import {TypeContext} from '../../../contexts/type.context';
+import {CounterContext} from '../../../contexts/counter.context';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -13,14 +14,19 @@ const StyledContainer = styled.div`
 `
 
 const MainPage = () =>{
-    const {type} = useContext(TypeContext)
+    const {type} = useContext(TypeContext);
+    const {counterActive} = useContext(CounterContext);
 
     return (
           <StyledContainer maxWidth="fixed" disableGutters>
-            <BigButton color="success" child={'Progressive'} type={'Progressive'}/>
-            <BigButton child={'Classic'} type={'Classic'}/>
-            <Configuration type={type}/>
-            <Counter/>
+            {counterActive ?
+            <Counter/> :
+            <>
+              <BigButton color="success" child={'Progressive'} type={'Progressive'}/>
+              <BigButton child={'Classic'} type={'Classic'}/>
+              <Configuration type={type}/>
+            </>
+            }
           </StyledContainer> 
           )
 }

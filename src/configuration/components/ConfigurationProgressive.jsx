@@ -4,6 +4,7 @@ import {DialogContentText} from  '@mui/material'
 import Slider from './utils/Slider'
 import Input from './utils/Input'
 import Checkbox from './utils/CheckBox'
+import MyButton from './utils/Button'
 
 const ConfigurationProgressive = () =>{
     
@@ -22,7 +23,7 @@ const ConfigurationProgressive = () =>{
                 <DialogContentText>{"Auto Start"}</DialogContentText>
                 <Checkbox/>
             </SmallContainer>
-        </StyledContainer>
+            <MyButton type={'progressive'} child={'Submit'}/>        </StyledContainer>
     )
 }
 

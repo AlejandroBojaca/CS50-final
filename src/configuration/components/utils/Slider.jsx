@@ -20,7 +20,6 @@ const SliderCustom = () =>{
   const handleChange = (e) =>{
       const input = e.target.value;
       setSlider(input);
-      console.log(slider)
     }
 
     return (

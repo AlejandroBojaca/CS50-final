@@ -1,8 +1,9 @@
 import React from 'react'
-import {DialogContentText, Button} from  '@mui/material'
+import {DialogContentText} from  '@mui/material'
 import Input from './utils/Input'
 import styled from 'styled-components'
 import Checkbox from './utils/CheckBox'
+import MyButton from './utils/Button'
 
 export const StyledContainer = styled.div`
     padding: 2rem 3rem 3rem 3rem;
@@ -31,7 +32,7 @@ const ConfigurationSimple = () => {
                 <DialogContentText>{"Auto Start"}</DialogContentText>
                 <Checkbox/>
             </SmallContainer>
-            <Button variant="outlined">Submit</Button>
+            <MyButton type={'classic'} child={'Submit'}/>
         </StyledContainer>
     )
 }
