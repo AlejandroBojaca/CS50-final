@@ -2,7 +2,6 @@ import React from 'react'
 import {DialogContentText} from  '@mui/material'
 import Input from './utils/Input'
 import styled from 'styled-components'
-import Checkbox from './utils/CheckBox'
 import MyButton from './utils/Button'
 
 export const StyledContainer = styled.div`
@@ -22,16 +21,16 @@ const ConfigurationSimple = () => {
         <StyledContainer>
             <SmallContainer>
                 <DialogContentText>{"Working Time"}</DialogContentText>
-                <Input inputField={'time-per-session'}/>
+                <Input inputField={'time-per-session'} timeType={'Min'}/>
             </SmallContainer>
             <SmallContainer>
                 <DialogContentText>{"Rest Time"}</DialogContentText>
-                <Input inputField={'rest-time'}/>
+                <Input inputField={'rest-time'} timeType={'Min'}/>
             </SmallContainer>
-            <SmallContainer>
+            {/* <SmallContainer>
                 <DialogContentText>{"Auto Start"}</DialogContentText>
                 <Checkbox/>
-            </SmallContainer>
+            </SmallContainer> */}
             <MyButton type={'classic'} child={'Submit'}/>
         </StyledContainer>
     )

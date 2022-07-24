@@ -24,7 +24,7 @@ const BigButton = ({color, child, type}) =>{
           color={color} 
           variant="contained" 
           className="no-border-radius-radius" 
-          style={{borderRadius:0}}
+          style={{borderRadius:0, fontFamily: 'pacifico', fontWeight:100}}
           onClick={handleClick}>
           {child}
         </StyledButton>

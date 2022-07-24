@@ -23,7 +23,7 @@ const MainPage = () =>{
             <Counter/> :
             <>
               <BigButton color="success" child={'Progressive'} type={'Progressive'}/>
-              <BigButton child={'Classic'} type={'Classic'}/>
+              <BigButton child={'Normal'} type={'Classic'}/>
               <Configuration type={type}/>
             </>
             }
