@@ -5,18 +5,18 @@ import { StatsContext } from "./../../../contexts/stats.context"
 import { TypeContext } from "../../../contexts/type.context"
 
 const MyButton = ({type, child}) =>{
-    const {counter, restCounter, counterActive, setCounter, setRestCounter, setCounterActive, setActualCount, setCounterRest} = useContext(CounterContext);
-    let {time, restTime, timeP, checked, slider, times, setTimeP, setTime, setRestTime, setChecked, setSlider, setTimes} = useContext(StatsContext);
-    const {open, setOpen} = useContext(TypeContext);
+    const {setProgressive, setCounterCopy, setCounter, setRestCounterCopy, setRestCounter, setCounterActive, setActualCount, setCounterRest} = useContext(CounterContext);
+    let {time, restTime, timeP , slider, setTimeP, setTime, setRestTime, setChecked, setSlider, setTimes} = useContext(StatsContext);
+    const {setOpen} = useContext(TypeContext);
 
     const handleClick = (e) =>{
+        let counterSet;
+        let restCounterSet;
 
         if (type === 'classic'){
           if (time && restTime){
-            setCounter(time*60);
-            setRestCounter(restTime*60);
-            setOpen(false);
-            setCounterActive(true);
+            counterSet = time*60;
+            restCounterSet = restTime*60;
           }
         }
 
@@ -26,20 +26,26 @@ const MyButton = ({type, child}) =>{
           let reducer = 1;
           if (pomTime < 10000){
             setTimes(3);
-            reducer = 300;
+            reducer = 3;
           }else {
             setTimes(5);
-            reducer = 500;
+            reducer = 5;
           }
           const productiveTime = pomTime*(slider / 100);
           const restTimeP =  pomTime - productiveTime;
-          pomTime = (productiveTime / 3) - reducer;
-          const pomRestTime = (restTimeP / 3) + (reducer/2);
-          setCounterActive(true);
-          setCounter(pomTime);
-          setRestCounter(pomRestTime);
-          setActualCount(0);
+          counterSet = (productiveTime / reducer) - (reducer*100);
+          restCounterSet = (restTimeP / reducer) + (reducer*100/2);
+          setProgressive(true);
         }
+
+        setOpen(false);
+        setCounterActive(true);
+        setCounter(counterSet);
+        setCounterCopy(counterSet);
+        setRestCounter(restCounterSet);
+        setRestCounterCopy(restCounterSet);
+        setActualCount(1);
+
         setTime(null);
         setTimeP(null);
         setRestTime(null);

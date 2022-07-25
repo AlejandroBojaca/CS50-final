@@ -3,7 +3,7 @@ import { TextField, InputAdornment } from "@mui/material";
 import {StatsContext} from './../../../contexts/stats.context'
 
 const Input = ({inputField, timeType}) =>{
-    const {time, restTime, setTime, setRestTime, timeP,setTimeP} = useContext(StatsContext);
+    const {time, times, restTime, setTime, setRestTime, timeP, setTimeP, setTimes} = useContext(StatsContext);
     
     const handleChange = (e) =>{
         const input = e.target.value;
@@ -17,10 +17,13 @@ const Input = ({inputField, timeType}) =>{
             if (inputField === 'rest-time' && input < 100){
                 setRestTime(input)
             }
+            if (inputField === 'repetitions' && input < 100){
+                setTimes(input)
+            }
         }
     }
 
-    const field = inputField === 'time-per-session' ? time || '': inputField === 'rest-time' ? restTime || '' : timeP || '';
+    const field = inputField === 'time-per-session' ? time || '': inputField === 'rest-time' ? restTime || '' : inputField === 'total-progressive-time' ? timeP || '' : times;
     return (
         <TextField
             value={field}

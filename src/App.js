@@ -3,6 +3,7 @@ import Nav from './layout/components/Nav/Nav'
 import { TypeProvider } from './contexts/type.context';
 import { StatsProvider } from './contexts/stats.context';
 import { CounterProvider } from './contexts/counter.context';
+import Footer from './layout/components/Footer/Footer';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <TypeProvider>
             <Nav/>
             <MainPage/>
+            <Footer/>
           </TypeProvider>
         </CounterProvider>
       </StatsProvider>

@@ -27,6 +27,10 @@ const ConfigurationSimple = () => {
                 <DialogContentText>{"Rest Time"}</DialogContentText>
                 <Input inputField={'rest-time'} timeType={'Min'}/>
             </SmallContainer>
+            <SmallContainer>
+                <DialogContentText>{"Repetitions"}</DialogContentText>
+                <Input inputField={'repetitions'} timeType={'Reps'}/>
+            </SmallContainer>
             {/* <SmallContainer>
                 <DialogContentText>{"Auto Start"}</DialogContentText>
                 <Checkbox/>

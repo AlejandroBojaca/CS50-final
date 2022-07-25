@@ -9,8 +9,8 @@ const marks = [
     },
     
     {
-      value: 100,
-      label: '100%',
+      value: 95,
+      label: '95% 🔥',
     },
   ];
   
@@ -28,6 +28,7 @@ const SliderCustom = () =>{
                 style={{maxWidth:'600px', marginLeft: 20}}
                 size="small"
                 min={40}
+                max={95}
                 aria-label="Custom marks"
                 defaultValue={slider}
                 step={5}
