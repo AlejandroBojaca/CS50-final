@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-Advance pomodoro like app using reactJs.
+Advance pomodoro like app using reactJs. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
